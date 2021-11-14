@@ -119,10 +119,8 @@ func main()  {
 
 	fmt.Printf("tx sent: %s\n", signedTx.Hash().Hex())
 
-	transactionStatus := checkTransactionReceipt(client, signedTx.Hash().Hex())
-
 	for {
-		transactionStatus = checkTransactionReceipt(client, signedTx.Hash().Hex())
+		transactionStatus := checkTransactionReceipt(client, signedTx.Hash().Hex())
 		fmt.Printf("tx status: %d\n", transactionStatus)
 
 		if transactionStatus == 1 {
