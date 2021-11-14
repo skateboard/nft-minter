@@ -105,7 +105,14 @@ func main()  {
 		log.Fatal(err)
 	}
 
-	tx := types.NewTransaction(nonce, toAddress, value, big.NewInt(config.GasLimit).Uint64(), gasPrice, data)
+	tx := types.NewTx(&types.LegacyTx{
+		Nonce:    nonce,
+		To:       &toAddress,
+		Value:    value,
+		Gas:      big.NewInt(config.GasLimit).Uint64(),
+		GasPrice: gasPrice,
+		Data:     data,
+	})
 
 	signedTx, err := types.SignTx(tx, types.NewEIP155Signer(chainID), privateKey)
 	if err != nil {
