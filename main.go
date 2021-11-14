@@ -132,5 +132,3 @@ func main()  {
 
 	fmt.Println("tx confirmed!")
 }
-
-const ContractABI = `[{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"address","name":"sender","type":"address"},{"indexed":false,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"FakeArtMinted","type":"event"},{"inputs":[],"name":"fakeERC721","outputs":[{"internalType":"contract FakeERC721","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"mint","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address payable","name":"","type":"address"}],"stateMutability":"view","type":"function"}]`
